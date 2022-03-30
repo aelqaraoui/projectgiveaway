@@ -3,8 +3,8 @@
 }
 
 html {
-  --fg: #efefef;
-  --bg: #070707;
+  --fg: #070707;
+  --bg: #efefef;
   --gray: #555;
   --light-gray: #ccc;
   --shadow: #e6e6e6;
@@ -30,7 +30,6 @@ main {
 }
 
 h1 {
-  background-image: url(assets/logo-black.svg);
   background-position: center 1em;
   background-repeat: no-repeat;
   background-size: auto 1.5em;
@@ -38,6 +37,7 @@ h1 {
   margin-bottom: 0;
   padding: 3.5em 0 0.5em;
   padding-bottom: 0;
+  padding-top: 0;
   text-align: center;
 }
 
@@ -54,9 +54,8 @@ h1 {
 }
 
 .banner {
-  width: 100%;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  width: 40%;
+  margin: 0 30%;
 }
 
 .banner1 {

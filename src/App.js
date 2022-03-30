@@ -5,9 +5,7 @@ import './global.css'
 import BN from 'bn.js';
 
 import getConfig from './config'
-const { networkId } = getConfig('mainnet')
-
-import banner from './Artboard_1.png'
+const { networkId } = getConfig('testnet')
 
 export default function App() {
   // use React Hooks to store greeting in component state
@@ -46,8 +44,9 @@ export default function App() {
   if (!window.walletConnection.isSignedIn()) {
     return (
       <main>
-        <img className='banner1' src={banner}/>
+        <img className='banner' src="https://bafybeibvwoclu6gsy2t3fz56ujow7ljhung2qnk4aj5efm5dnrrjafxc4i.ipfs.dweb.link/"/>
 
+        <h1>Project Giveaway</h1>
         <p style={{ textAlign: 'center', marginTop: '2.5em' }}>
           <button onClick={login}>Sign in</button>
         </p>
@@ -63,11 +62,11 @@ export default function App() {
       </button>
       <main>
 
-        <img className='banner' src={banner}/>
+        <img className='banner' src="https://bafybeibvwoclu6gsy2t3fz56ujow7ljhung2qnk4aj5efm5dnrrjafxc4i.ipfs.dweb.link/"/>
 
+        <h1>Project Giveaway</h1>
         <p style={{marginTop:50}}>
-          Building NEAR's first casino.<br/> 
-          Sharing 100% of the profits from the casino with our holders.
+        The TOKEN to the biggest Giveaway on the $NEAR Blockchain
         </p>
 
         <p className='bold smallText'>
@@ -78,7 +77,7 @@ export default function App() {
           Total minted:  {totalMinted}
         </p>
         <p className='smallText'>
-          Supply:  {1000}
+          Supply:  {1500}
         </p>
         <form onSubmit={async event => {
           event.preventDefault()
@@ -90,13 +89,16 @@ export default function App() {
           fieldset.disabled = true
 
           try {
+            let whitelist_done = await window.contract.is_whitelist_done()
+
+            let day_ones_allowance = await window.contract.day_ones_allowance({account_id: window.accountId})
             // make an update call to the smart contract
             await window.contract.nft_mint({
               // pass the value that the user entered in the greeting field
               receiver_id: window.accountId
             },
             100000000000000,
-            new BN('5000000000000000000000000', 10) // attached deposit in yoctoNEAR (optional)
+            whitelist_done ? (day_ones_allowance > 0 ? new BN('750000000000000000000000', 10) : new BN('1000000000000000000000000', 10)) : new BN('500000000000000000000000', 10) // attached deposit in yoctoNEAR (optional)
             )
           } catch (e) {
             alert(

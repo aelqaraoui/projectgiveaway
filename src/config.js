@@ -1,4 +1,4 @@
-const CONTRACT_NAME = 'degenlizard.near'
+const CONTRACT_NAME = 'nft.projectgiveaway.testnet'
 
 function getConfig(env) {
   switch (env) {
