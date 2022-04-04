@@ -5,7 +5,7 @@ import './global.css'
 import BN from 'bn.js';
 
 import getConfig from './config'
-const { networkId } = getConfig('testnet')
+const { networkId } = getConfig('mainnet')
 
 export default function App() {
   // use React Hooks to store greeting in component state
@@ -77,7 +77,7 @@ export default function App() {
           Total minted:  {totalMinted}
         </p>
         <p className='smallText'>
-          Supply:  {1500}
+          Supply:  {750}
         </p>
         <form onSubmit={async event => {
           event.preventDefault()
