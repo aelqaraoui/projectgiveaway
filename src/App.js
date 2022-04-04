@@ -44,7 +44,7 @@ export default function App() {
   if (!window.walletConnection.isSignedIn()) {
     return (
       <main>
-        <img className='banner' src="https://bafybeibvwoclu6gsy2t3fz56ujow7ljhung2qnk4aj5efm5dnrrjafxc4i.ipfs.dweb.link/"/>
+        <img className='banner' src="https://bafybeig6t34genge35zowdxgwzlqq46mcdk6wcjvadkfo57wtio6bbspny.ipfs.nftstorage.link/"/>
 
         <h1>Project Giveaway</h1>
         <p style={{ textAlign: 'center', marginTop: '2.5em' }}>
@@ -62,7 +62,7 @@ export default function App() {
       </button>
       <main>
 
-        <img className='banner' src="https://bafybeibvwoclu6gsy2t3fz56ujow7ljhung2qnk4aj5efm5dnrrjafxc4i.ipfs.dweb.link/"/>
+        <img className='banner' src="https://bafybeig6t34genge35zowdxgwzlqq46mcdk6wcjvadkfo57wtio6bbspny.ipfs.nftstorage.link/"/>
 
         <h1>Project Giveaway</h1>
         <p style={{marginTop:50}}>
